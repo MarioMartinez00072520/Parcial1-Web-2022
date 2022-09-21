@@ -10,35 +10,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&family=Space+Mono&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./assets/css/style.css">
+
   <title> Dev Spaces </title>
 </head>
 <body>
   <header class="layout-item">
-    <div id="logo-container">
-      <figure id="hamburger">
-        <img src="./assets/images/hamburger.png" alt="Menu button">
-      </figure>
-  
-      <figure id="logo">
-        <img src="./assets/images/logo_main.png" alt="Web Logo">
-      </figure>
+    <div class="header-container">
+      <div id="logo-container">
+        <figure id="hamburger">
+          <img src="./assets/images/hamburger.png" alt="Menu button">
+        </figure>
+    
+        <figure id="logo">
+          <img src="./assets/images/logo_main.png" alt="Web Logo">
+        </figure>
+      </div>
+    
+      <h1>
+        Dev Space
+      </h1>
     </div>
-  
-    <h1>
-      Dev Space
-    </h1>
+    
+    <div class="header-container">
+      <nav>
+        <ul class="header-buttons">
+          <li><a href="#"> How We Work </a></li>
+          <li><a href="#"> Inner Blog </a></li>
+          <li><a href="#"> Account </a></li>
+          <li class="btn"> <a href="#"> View Plans </a> </li>
+        </ul>
+      </nav>
+    </div>
 
-    <nav class="layout-item">
-      <ul>
-        <li><a href="#"> How We Work </a></li>
-        <li><a href="#"> Inner Blog </a></li>
-        <li><a href="#"> Account </a></li>
-        <li class="btn"> <a href="#"> View Plans </a> </li>
-      </ul>
-    </nav>
   </header>
 
-  <section id="landing-section">
+  <section class="layout-item" id="landing-section">
     <div class="side-text">
       <hr>
       <h2> Boosting your productivity. </h2>
@@ -57,7 +64,7 @@
     </figure>
   </section>
 
-  <section id="spaces-section">
+  <section class="layout-item" id="spaces-section">
     <div class="container">
       <!-- (art.space-card>((fig>img)+(h3>{ Title $$ })+(p>lorem15)+(a>{ Get Stared })))*6 -->
       <article id="spaces-title" class="space-card">
@@ -122,7 +129,7 @@
     </div>
   </section>
   
-  <section id="plans-section">
+  <section class="layout-item" id="plans-section">
     <article class="side-text">
       <hr>
       <h2>
@@ -200,7 +207,7 @@
     </div>
   </section>
 
-  <section id="tweets-section">
+  <section class="layout-item" id="tweets-section">
     <article class="side-text">
       <hr>
       <h2> Our community </h2>
