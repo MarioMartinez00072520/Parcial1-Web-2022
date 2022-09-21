@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+    body > section {
+        padding: 1rem;
+    }
+
+    /* Hamburger button display */
+    .nav-container {
+        display: none;
+    }
+
+    header {
+        display: none;
+    }
+
+    nav {
+        padding: 1.5rem;
+    }
+
+    /* #menu-icon {
+        display: block;
+        height: 1.5rem;
+        width: 1.5rem;
+    } */
+}
+
+@media screen and (max-width: 640px) {
+    :root {
+        font-size: 0.75rem;
+      }
+}
