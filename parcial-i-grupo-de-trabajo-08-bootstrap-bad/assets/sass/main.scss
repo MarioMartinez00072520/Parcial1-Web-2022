@@ -134,6 +134,8 @@ body {
     grid-template-areas: "header"
                          "section";
     
+
+
     .layout-item {
         padding: 1rem;
         
@@ -152,6 +154,7 @@ body {
         top: 0;
         left: 0;
         z-index: 10;
+        
     
         @include flex(row, space-between, center);
     
@@ -372,7 +375,7 @@ body {
 
         section.container {
             @include flex(row, space-around);
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 1rem;
 
             article.plan-card{

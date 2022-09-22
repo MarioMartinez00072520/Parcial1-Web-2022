@@ -309,7 +309,7 @@ body section.layout-item#plans-section section.container {
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 body section.layout-item#plans-section section.container article.plan-card {
