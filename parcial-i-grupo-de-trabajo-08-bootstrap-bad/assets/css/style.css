@@ -82,25 +82,6 @@ body {
   grid-template-areas: "header" "section";
 }
 
-figure {
-  width: 50px;
-  height: 50px;
-}
-figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-#hamburger {
-  display: none;
-}
-
-h1 {
-  font-family: "Handlee", cursive;
-  color: hsl(0deg, 0%, 0%);
-}
-
 .layout-item {
   padding: 1rem;
   display: flex;
@@ -108,6 +89,10 @@ h1 {
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+header {
+  position: sticky;
 }
 
 header.layout-item {
@@ -120,6 +105,22 @@ header.layout-item {
   justify-content: space-between;
   align-items: center;
 }
+header.layout-item figure {
+  width: 50px;
+  height: 50px;
+}
+header.layout-item figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+header.layout-item #hamburger {
+  display: none;
+}
+header.layout-item h1 {
+  font-family: "Handlee", cursive;
+  color: hsl(0deg, 0%, 0%);
+}
 header.layout-item .header-container {
   display: flex;
   flex-direction: row;
@@ -127,23 +128,23 @@ header.layout-item .header-container {
   justify-content: center;
   align-items: center;
 }
-header.layout-item nav {
+header.layout-item ul {
   display: flex;
-  flex-direction: row-reverse;
 }
 header.layout-item a {
   text-decoration: none;
-}
-
-nav > ul {
-  display: flex;
   flex-direction: row-reverse;
+}
+header.layout-item nav > ul {
+  display: flex;
+  flex-direction: row center;
   gap: 1rem;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
   gap: 1rem;
   list-style: none;
   text-decoration: none;
+  margin: 0px 25px 0px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
