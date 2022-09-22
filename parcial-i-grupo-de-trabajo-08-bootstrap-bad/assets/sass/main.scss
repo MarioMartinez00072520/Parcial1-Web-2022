@@ -20,7 +20,7 @@ $theme-text-font: 'Roboto', sans-serif;
 $theme-title-font: 'Handlee', cursive;
 $alt-theme-text-font: 'Space Mono', monospace;
 
-/*RESET*/
+
 
 :root {
     box-sizing: border-box;
@@ -41,10 +41,6 @@ h2, h3, h4, h5, h6 {
 	color: $heading-color;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,7 +61,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -89,7 +86,7 @@ table {
 	border-spacing: 0;
 }
 
-/*Mixins*/
+
 
 @mixin flex($dir: column, $just: center, $al: center) {
     display: flex;
@@ -120,9 +117,9 @@ table {
 @mixin shadow-standard {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-/*Grid del body, header + secciones*/
 
-body {
+
+/* body {
     width: 100%;
     min-height: 100vh;
 
@@ -284,7 +281,7 @@ body {
             }
         }
     }
-    /*Spaces section*/
+    
 
     section.layout-item#spaces-section {
         .container {
@@ -355,7 +352,6 @@ body {
         }
     }
 
-    /*plans section*/
     section.layout-item#plans-section {
         background-color: $background-color-alt-dark;
         gap: 1rem;  
@@ -586,5 +582,5 @@ body {
             }
         }
     }
-}
+}  */
 
