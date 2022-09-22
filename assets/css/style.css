@@ -1,0 +1,528 @@
+/*Variables*/
+/*RESET*/
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: hsl(0deg, 0%, 25%);
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(0deg, 0%, 0%);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*Mixins*/
+/*Grid del body, header + secciones*/
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(50px, 15%) 1fr;
+  grid-template-areas: "header" "section";
+  /*Spaces section*/
+  /*plans section*/
+}
+body .layout-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+body header.layout-item {
+  grid-area: header;
+  display: flex;
+  background-color: white;
+  padding: 1rem 3rem 1rem 3rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+body header.layout-item figure {
+  width: 50px;
+  height: 50px;
+}
+body header.layout-item figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+body header.layout-item #hamburger {
+  display: none;
+}
+body header.layout-item h1 {
+  font-family: "Handlee", cursive;
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+body header.layout-item .header-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+body header.layout-item ul {
+  display: flex;
+}
+body header.layout-item a {
+  text-decoration: none;
+  flex-direction: row-reverse;
+  color: hsl(224deg, 100%, 58%);
+}
+body header.layout-item a:hover {
+  text-decoration: underline;
+}
+body header.layout-item nav > ul {
+  display: flex;
+  flex-direction: row center;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4rem;
+  list-style: none;
+  text-decoration: none;
+}
+body header.layout-item .btn {
+  border: solid 1px hsl(224deg, 100%, 58%);
+  background-color: hsl(224deg, 100%, 58%);
+  border-width: 1rem;
+}
+body header.layout-item .white-a {
+  color: white;
+}
+body header.layout-item .btn:hover {
+  border-radius: 1rem 0 1rem 0;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+body section.layout-item#landing-section {
+  background-color: hsl(213deg, 58%, 19%);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+body section.layout-item#landing-section .side-text {
+  width: 60%;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 0 5rem;
+}
+body section.layout-item#landing-section .side-text hr {
+  width: 25%;
+  margin-left: 0;
+  color: white;
+}
+body section.layout-item#landing-section .side-text h2, body section.layout-item#landing-section .side-text p, body section.layout-item#landing-section .side-text a {
+  color: white;
+}
+body section.layout-item#landing-section .side-text h2 {
+  font-size: 300%;
+  line-height: 75px;
+}
+body section.layout-item#landing-section .side-text p {
+  text-align: justify;
+  line-height: 30px;
+}
+body section.layout-item#landing-section .side-text a {
+  border: solid 1px white;
+  padding: 1rem;
+  text-decoration: none;
+}
+body section.layout-item#landing-section .side-text a:hover {
+  text-decoration: underline;
+  border-radius: 1rem 0 1rem 0;
+  transition: 0.5s;
+}
+body section.layout-item#landing-section .side-text .a-button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+body section.layout-item#landing-section figure {
+  padding: 2rem;
+}
+body section.layout-item#landing-section figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 2rem 0 2rem 0;
+}
+body section.layout-item#spaces-section .container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+body section.layout-item#spaces-section .container article#spaces-title {
+  background-color: hsl(224deg, 100%, 58%);
+}
+body section.layout-item#spaces-section .container article#spaces-title h2 {
+  color: white;
+}
+body section.layout-item#spaces-section .container article.space-card {
+  flex: 1 0 450px;
+  min-height: 500px;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+}
+body section.layout-item#spaces-section .container article.space-card figure {
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+}
+body section.layout-item#spaces-section .container article.space-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+body section.layout-item#spaces-section .container article.space-card h2, body section.layout-item#spaces-section .container article.space-card h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body section.layout-item#spaces-section .container article.space-card p {
+  align-self: stretch;
+  text-align: justify;
+  padding: 2rem;
+  line-height: 2;
+}
+body section.layout-item#spaces-section .container article.space-card a {
+  align-self: flex-end;
+  padding: 1.5rem;
+  color: hsl(224deg, 100%, 58%);
+  font-family: "Space Mono", monospace;
+}
+body section.layout-item#spaces-section .container .space-card:hover {
+  transform: scale(1.1);
+}
+body section.layout-item#plans-section {
+  background-color: hsl(0deg, 0%, 85%);
+  gap: 1rem;
+}
+body section.layout-item#plans-section article.side-text {
+  padding: 1rem;
+}
+body section.layout-item#plans-section article.side-text hr {
+  text-align: left;
+  width: 25%;
+  margin-left: 0;
+  color: white;
+}
+body section.layout-item#plans-section article.side-text h2 {
+  font-weight: 700;
+  font-size: 50px;
+}
+body section.layout-item#plans-section section.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body section.layout-item#plans-section section.container article.plan-card {
+  flex: 1 0 450px;
+  min-height: 500px;
+  padding: 2.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+body section.layout-item#plans-section section.container article.plan-card span.plan-price {
+  font-weight: 500;
+  font-size: 40px;
+}
+body section.layout-item#plans-section section.container article.plan-card h3 {
+  font-size: 20px;
+}
+body section.layout-item#plans-section section.container article.plan-card span.plan-price-desc {
+  font-size: 17px;
+}
+body section.layout-item#plans-section section.container article.plan-card a {
+  color: hsl(224deg, 100%, 58%);
+}
+body section.layout-item#plans-section section.container article.plan-card .btn {
+  border: solid 1px hsl(224deg, 100%, 58%);
+  padding: 1rem;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred {
+  background-color: hsl(224deg, 100%, 58%);
+}
+body section.layout-item#plans-section section.container article.plan-card.starred h3, body section.layout-item#plans-section section.container article.plan-card.starred span, body section.layout-item#plans-section section.container article.plan-card.starred ul, body section.layout-item#plans-section section.container article.plan-card.starred li, body section.layout-item#plans-section section.container article.plan-card.starred a {
+  color: white;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred span.plan-price {
+  font-weight: 500;
+  font-size: 40px;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred h3 {
+  font-size: 20px;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred span.plan-price-desc {
+  font-size: 17px;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred .btn {
+  border: solid 1px white;
+  padding: 1rem;
+}
+body section.layout-item#plans-section section.container .btn:hover {
+  border-radius: 1rem 0 1rem 0;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+body section.layout-item#timer-section {
+  background-color: hsl(213deg, 58%, 19%);
+  gap: 2rem;
+}
+body section.layout-item#timer-section article.side-text {
+  color: white;
+  padding: 1rem;
+}
+body section.layout-item#timer-section article.side-text hr {
+  text-align: left;
+  width: 25%;
+  margin-left: 0;
+  color: white;
+}
+body section.layout-item#timer-section article.side-text h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 50px;
+}
+body section.layout-item#timer-section .timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0 2rem 0;
+}
+body section.layout-item#timer-section .timer .timer-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  gap: 1rem;
+  height: 25vh;
+  width: 150px;
+  background-color: hsl(213deg, 33%, 33%);
+}
+body section.layout-item#timer-section .timer .timer-part hr {
+  width: inherit;
+}
+body section.layout-item#timer-section .timer .timer-part span {
+  font-size: 50px;
+  color: white;
+  font-family: "Space Mono", monospace;
+}
+body section.layout-item#timer-section .timer .timer-part span.secondary-span {
+  font-size: 30px;
+  font-family: "Handlee", cursive;
+}
+body section.layout-item#tweets-section {
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: hsl(0deg, 0%, 85%);
+  justify-content: center;
+  align-items: center;
+}
+body section.layout-item#tweets-section article.side-text {
+  color: white;
+  padding: 1rem;
+  width: 100%;
+}
+body section.layout-item#tweets-section article.side-text hr {
+  text-align: left;
+  width: 25%;
+  margin-left: 0;
+  color: white;
+}
+body section.layout-item#tweets-section article.side-text h2 {
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 600;
+  font-size: 50px;
+}
+body section.layout-item#tweets-section .container {
+  /* max-width: 50%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: scroll;
+  width: 100%;
+}
+body section.layout-item#tweets-section .container .tweet-card {
+  /* min-height: 40vh; */
+  border-radius: 1rem;
+  background-color: white;
+  gap: 2rem;
+  padding: 1rem;
+}
+body section.layout-item#tweets-section .container .tweet-card p.tweet-message {
+  position: static;
+  overflow-y: scroll;
+  height: 100px;
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info .user-data {
+  display: flex;
+  flex-direction: column;
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info .user-data h3, body section.layout-item#tweets-section .container .tweet-card .user-info .user-data p {
+  color: hsl(0deg, 0%, 0%);
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info .user-data h3 {
+  font-size: 115%;
+  font-weight: 600;
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info figure {
+  width: 30px;
+  height: 30px;
+}
+body section.layout-item#tweets-section .container .tweet-card .user-info figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+body section.layout-item#tweets-section #join-us-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 30vh;
+  background-color: hsl(213deg, 58%, 19%);
+  border-radius: 1rem;
+  gap: 1rem;
+}
+body section.layout-item#tweets-section #join-us-form h3 {
+  font-family: "Handlee", cursive;
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+}
+body section.layout-item#tweets-section #join-us-form p {
+  text-align: justify;
+  color: white;
+}
+body section.layout-item#tweets-section #join-us-form .join-us-input-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body section.layout-item#tweets-section #join-us-form .join-us-input-container button.btn.light {
+  background: none;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border: solid 1px white;
+}
+
+/*# sourceMappingURL=style.css.map */

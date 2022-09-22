@@ -1,0 +1,521 @@
+@import "variables";
+/*RESET*/
+
+@import "reset";
+
+/*Mixins*/
+
+@import "mixins.scss";
+/*Grid del body, header + secciones*/
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, 15%) 1fr;
+
+    grid-template-areas: "header"
+                         "section";
+    
+
+
+    .layout-item {
+        padding: 1rem;
+        
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    header.layout-item{
+        grid-area: header;
+        display: flex;
+        background-color: $background-color;
+        padding: 1rem 3rem 1rem 3rem;
+
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        
+    
+        @include flex(row, space-between, center);
+    
+        figure {
+            @include square(50px);
+            
+            img {
+              @include fluid-img();
+            }
+          }
+        
+        
+        #hamburger {
+            display: none;
+        }
+        
+        h1 {
+            font-family: $theme-title-font;
+            color: $heading-color;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    
+        .header-container{
+            @include flex(row, center, center );
+        }
+    
+        ul {
+            display: flex;
+        }
+    
+    
+        a {
+            text-decoration: none;
+            flex-direction: row-reverse;
+            color: $color-accent;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+    
+        nav > ul{
+            @include flex(row center, flex-end);
+            gap: 4rem;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .btn{
+            border: solid 1px $color-accent;
+            background-color: $color-accent;
+            border-width: 1rem;
+        }
+
+        .white-a{
+            color: white;
+        }
+
+        .btn:hover{
+            border-radius: 1rem 0 1rem 0;
+            text-decoration: underline;
+            transition: 0.5s;
+        }
+        
+    }
+
+    section.layout-item#landing-section {
+        background-color: $color-primary;
+        
+        @include flex(row, center, center);
+        gap: 2rem;
+
+        position: relative;
+
+        .side-text {
+            width: 60%;
+            display: flex;
+            gap: 3rem;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 2rem;
+            margin: 0 5rem;
+
+            hr {
+                @include hr();
+            }
+
+            h2, p, a {
+                color: $text-color-alt;
+            }
+            
+            h2 {
+                font-size: 300%;
+                line-height: 75px;
+            }
+
+            p {
+                text-align: justify;
+                line-height: 30px;
+            }
+
+            a {
+                border: solid 1px $text-color-alt;
+                padding: 1rem;
+                text-decoration: none;
+            }
+
+            a:hover{
+                text-decoration: underline;
+                border-radius: 1rem 0 1rem 0;
+                transition: 0.5s;
+            }
+
+            .a-button-container {
+                @include flex(row-reverse, flex-start, center);
+            }
+
+        }
+
+        figure {
+            padding: 2rem;
+            img {
+                @include fluid-img();
+                border-radius: 2rem 0 2rem 0;
+            }
+        }
+    }
+    /*Spaces section*/
+
+    section.layout-item#spaces-section {
+        .container {
+            @include flex(row, space-around);
+            flex-wrap: wrap;
+            padding: 0 2rem;
+            gap: 1rem;
+
+            article#spaces-title{
+                background-color: $color-accent;
+                h2 {
+                    color: $text-color-alt;
+                }
+            }
+
+            article.space-card{
+                flex: 1 0 450px;
+                min-height: 500px;
+                padding: 1rem;
+                margin: 1rem;
+
+                @include flex(column, center, center);
+
+                background-color: $background-color;
+                border-radius: 1rem;
+
+                @include shadow-standard();
+
+                position: relative;
+
+                figure {
+                    position: absolute;
+                    top: -25px;
+                    left: 25px;
+
+                    @include square(50px);
+                    img {
+                        @include fluid-img();
+                    }
+                }
+
+                h2, h3 {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+
+                p {
+                    align-self: stretch;
+                    text-align: justify;
+                    padding: 2rem;
+                    line-height: 2;
+                }
+
+                a {
+                    align-self: flex-end;
+                    padding: 1.5rem;
+                    color: $color-accent;
+                    font-family: $alt-theme-text-font;
+                }
+
+                
+            }
+
+            .space-card:hover{
+                transform: scale(1.1); 
+            } 
+        }
+    }
+
+    /*plans section*/
+    section.layout-item#plans-section {
+        background-color: $background-color-alt-dark;
+        gap: 1rem;  
+
+        article.side-text {
+            padding: 1rem;
+            hr {
+                text-align: left;
+                @include hr();
+            }
+
+            h2 {
+                font-weight: 700;
+                font-size: 50px;
+            }
+        }
+
+        section.container {
+            @include flex(row, space-around);
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            article.plan-card{
+                flex: 1 0 450px;
+                min-height: 500px;
+                padding: 2.5rem;
+                margin: 1rem;
+
+                @include flex(column, space-between, center);
+
+                background-color: $background-color;
+                border-radius: 1rem;
+
+                @include shadow-standard();
+
+                span.plan-price {
+                    font-weight: 500;
+                    font-size: 40px;
+                }
+                
+                h3 {
+                    font-size: 20px;
+                }
+
+                span.plan-price-desc {
+                    font-size: 17px;
+                }
+
+                a {
+                    color: $color-accent;
+                }
+
+                .btn {
+                    border: solid 1px $color-accent;
+                    padding: 1rem;
+                }
+
+            }
+
+            article.plan-card.starred {
+                background-color: $color-accent;
+                h3, span, ul, li, a {
+                    color: $background-color;
+                }
+                span.plan-price {
+                    font-weight: 500;
+                    font-size: 40px;
+                }
+                
+                h3 {
+                    font-size: 20px;
+                }
+
+                span.plan-price-desc {
+                    font-size: 17px;
+                }
+
+                .btn{
+                    border: solid 1px $background-color;
+                    padding: 1rem;
+                }
+
+            }
+
+            .btn:hover{
+                border-radius: 1rem 0 1rem 0;
+                text-decoration: underline;
+                transition: 0.5s;
+            }
+            
+        }
+    }
+
+    section.layout-item#timer-section{
+        background-color: $color-primary;  
+        gap: 2rem;
+        article.side-text {
+            color: $background-color;
+            padding: 1rem;
+            hr {
+                text-align: left;
+                @include hr();
+            }
+
+            h2 {
+                color: $background-color;
+                font-weight: 600;
+                font-size: 50px;
+            }
+        }
+
+        .timer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            
+            padding: 0 0 2rem 0;
+
+            .timer-part{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 0.5rem;
+                gap: 1rem;
+                height: 25vh;
+                width: 150px;
+                background-color: $color-primary-light;
+                
+                hr {
+                    width: inherit;
+                }
+
+                span {
+                    font-size: 50px;
+                    color: $background-color;
+                    font-family: $alt-theme-text-font;
+                }
+
+                span.secondary-span{
+                    font-size: 30px;
+                    font-family: $theme-title-font; 
+                }
+
+                
+            }
+        }
+
+        
+    }
+
+    section.layout-item#tweets-section {
+        min-height: 100vh;
+        max-width: 100%;
+        background-color: $background-color-alt-dark;
+        justify-content: center;
+        align-items: center;
+        article.side-text {
+            color: $background-color;
+            padding: 1rem;
+            width: 100%;
+            hr {
+                text-align: left;
+                @include hr();
+            }
+
+            h2 {
+                color: $heading-color;
+                font-weight: 600;
+                font-size: 50px;
+            }
+        }
+
+        .container {
+            /* max-width: 50%; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            
+            padding: 1rem;            
+
+            overflow-x: scroll;
+            width: 100%;
+
+            .tweet-card{
+                /* min-height: 40vh; */
+                border-radius: 1rem;
+                background-color: $background-color;
+
+                gap: 2rem;
+
+                padding: 1rem;
+
+                p.tweet-message{
+                    position: static;
+                    overflow-y: scroll;
+                    height: 100px;
+                }
+
+                .user-info{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    gap: 1rem;
+                    
+                    padding-top: 1rem;
+
+                    .user-data{
+                        display: flex;
+                        flex-direction: column;
+                        h3,p{
+                            color: $heading-color;
+                        }
+    
+                        h3 {
+                            font-size: 115%;
+                            font-weight: 600;
+                        }
+                    }
+
+                    figure{
+                        @include square(30px);
+                        img{
+                            @include fluid-img();
+                        }
+                    }
+                }
+            }
+        }
+
+        #join-us-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            min-height: 30vh;
+            background-color: $color-primary;
+            border-radius: 1rem;
+            gap: 1rem;
+            h3 {
+                font-family: $theme-title-font;
+                color: $background-color;
+                font-size: 40px;
+                font-weight: 500;
+            }
+    
+            p {
+                text-align: justify;
+                color: $background-color;
+            }
+    
+            .join-us-input-container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                button.btn.light {
+                    background: none;
+	                color: $background-color;
+	                border: none;
+	                padding: 1rem;
+	                font: inherit;
+	                cursor: pointer;
+	                outline: inherit;
+                    border: solid 1px $background-color;
+                }
+            }
+        }
+    }
+}
+
