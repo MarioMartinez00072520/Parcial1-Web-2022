@@ -171,6 +171,8 @@ body {
         h1 {
             font-family: $theme-title-font;
             color: $heading-color;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
     
         .header-container{
@@ -185,13 +187,34 @@ body {
         a {
             text-decoration: none;
             flex-direction: row-reverse;
+            color: $color-accent;
+        }
+
+        a:hover{
+            text-decoration: underline;
         }
     
         nav > ul{
             @include flex(row center, flex-end);
-            gap: 1rem;
+            gap: 4rem;
             list-style: none;
             text-decoration: none;
+        }
+
+        .btn{
+            border: solid 1px $color-accent;
+            background-color: $color-accent;
+            border-width: 1rem;
+        }
+
+        .white-a{
+            color: white;
+        }
+
+        .btn:hover{
+            border-radius: 1rem 0 1rem 0;
+            text-decoration: underline;
+            transition: 0.5s;
         }
         
     }
@@ -231,9 +254,17 @@ body {
                 text-align: justify;
                 line-height: 30px;
             }
+
             a {
                 border: solid 1px $text-color-alt;
                 padding: 1rem;
+                text-decoration: none;
+            }
+
+            a:hover{
+                text-decoration: underline;
+                border-radius: 1rem 0 1rem 0;
+                transition: 0.5s;
             }
 
             .a-button-container {
@@ -311,7 +342,13 @@ body {
                     color: $color-accent;
                     font-family: $alt-theme-text-font;
                 }
+
+                
             }
+
+            .space-card:hover{
+                transform: scale(1.1); 
+            } 
         }
     }
 
@@ -351,6 +388,28 @@ body {
 
                 @include shadow-standard();
 
+                span.plan-price {
+                    font-weight: 500;
+                    font-size: 40px;
+                }
+                
+                h3 {
+                    font-size: 20px;
+                }
+
+                span.plan-price-desc {
+                    font-size: 17px;
+                }
+
+                a {
+                    color: $color-accent;
+                }
+
+                .btn {
+                    border: solid 1px $color-accent;
+                    padding: 1rem;
+                }
+
             }
 
             article.plan-card.starred {
@@ -370,7 +429,20 @@ body {
                 span.plan-price-desc {
                     font-size: 17px;
                 }
+
+                .btn{
+                    border: solid 1px $background-color;
+                    padding: 1rem;
+                }
+
             }
+
+            .btn:hover{
+                border-radius: 1rem 0 1rem 0;
+                text-decoration: underline;
+                transition: 0.5s;
+            }
+            
         }
     }
 
@@ -427,8 +499,12 @@ body {
                     font-size: 30px;
                     font-family: $theme-title-font; 
                 }
+
+                
             }
         }
+
+        
     }
 
     section.layout-item#tweets-section {

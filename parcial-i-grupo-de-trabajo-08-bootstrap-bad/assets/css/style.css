@@ -118,6 +118,8 @@ body header.layout-item #hamburger {
 body header.layout-item h1 {
   font-family: "Handlee", cursive;
   color: hsl(0deg, 0%, 0%);
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 body header.layout-item .header-container {
   display: flex;
@@ -132,6 +134,10 @@ body header.layout-item ul {
 body header.layout-item a {
   text-decoration: none;
   flex-direction: row-reverse;
+  color: hsl(224deg, 100%, 58%);
+}
+body header.layout-item a:hover {
+  text-decoration: underline;
 }
 body header.layout-item nav > ul {
   display: flex;
@@ -139,9 +145,22 @@ body header.layout-item nav > ul {
   gap: 1rem;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
   list-style: none;
   text-decoration: none;
+}
+body header.layout-item .btn {
+  border: solid 1px hsl(224deg, 100%, 58%);
+  background-color: hsl(224deg, 100%, 58%);
+  border-width: 1rem;
+}
+body header.layout-item .white-a {
+  color: white;
+}
+body header.layout-item .btn:hover {
+  border-radius: 1rem 0 1rem 0;
+  text-decoration: underline;
+  transition: 0.5s;
 }
 body section.layout-item#landing-section {
   background-color: hsl(213deg, 58%, 19%);
@@ -181,6 +200,12 @@ body section.layout-item#landing-section .side-text p {
 body section.layout-item#landing-section .side-text a {
   border: solid 1px white;
   padding: 1rem;
+  text-decoration: none;
+}
+body section.layout-item#landing-section .side-text a:hover {
+  text-decoration: underline;
+  border-radius: 1rem 0 1rem 0;
+  transition: 0.5s;
 }
 body section.layout-item#landing-section .side-text .a-button-container {
   display: flex;
@@ -258,6 +283,9 @@ body section.layout-item#spaces-section .container article.space-card a {
   color: hsl(224deg, 100%, 58%);
   font-family: "Space Mono", monospace;
 }
+body section.layout-item#spaces-section .container .space-card:hover {
+  transform: scale(1.1);
+}
 body section.layout-item#plans-section {
   background-color: hsl(0deg, 0%, 85%);
   gap: 1rem;
@@ -298,6 +326,23 @@ body section.layout-item#plans-section section.container article.plan-card {
   border-radius: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+body section.layout-item#plans-section section.container article.plan-card span.plan-price {
+  font-weight: 500;
+  font-size: 40px;
+}
+body section.layout-item#plans-section section.container article.plan-card h3 {
+  font-size: 20px;
+}
+body section.layout-item#plans-section section.container article.plan-card span.plan-price-desc {
+  font-size: 17px;
+}
+body section.layout-item#plans-section section.container article.plan-card a {
+  color: hsl(224deg, 100%, 58%);
+}
+body section.layout-item#plans-section section.container article.plan-card .btn {
+  border: solid 1px hsl(224deg, 100%, 58%);
+  padding: 1rem;
+}
 body section.layout-item#plans-section section.container article.plan-card.starred {
   background-color: hsl(224deg, 100%, 58%);
 }
@@ -313,6 +358,15 @@ body section.layout-item#plans-section section.container article.plan-card.starr
 }
 body section.layout-item#plans-section section.container article.plan-card.starred span.plan-price-desc {
   font-size: 17px;
+}
+body section.layout-item#plans-section section.container article.plan-card.starred .btn {
+  border: solid 1px white;
+  padding: 1rem;
+}
+body section.layout-item#plans-section section.container .btn:hover {
+  border-radius: 1rem 0 1rem 0;
+  text-decoration: underline;
+  transition: 0.5s;
 }
 body section.layout-item#timer-section {
   background-color: hsl(213deg, 58%, 19%);
