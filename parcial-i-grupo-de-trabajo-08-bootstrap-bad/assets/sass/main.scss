@@ -123,68 +123,65 @@ body {
 
     grid-template-areas: "header"
                          "section";
-}
-
-
-
-.layout-item {
-    padding: 1rem;
     
-    @include flex();
-}
-
-header {
-    position: sticky;
-}
-
-header.layout-item{
-    grid-area: header;
-    display: flex;
-    background-color: $background-color;
-    
-
-    @include flex(row, space-between, center);
-
-    figure {
-        @include square(50px);
+     .layout-item {
+        padding: 1rem;
         
-        img {
-          @include fluid-img();
-        }
-      }
-    
-    
-    #hamburger {
-        display: none;
+        @include flex();
     }
     
-    h1 {
-        font-family: $theme-title-font;
-        color: $heading-color;
-    }
-
-    .header-container{
-        @include flex(row, center, center );
-    }
-
-    ul {
+    header.layout-item{
+        grid-area: header;
         display: flex;
+        background-color: $background-color;
+        
+    
+        @include flex(row, space-between, center);
+    
+        figure {
+            @include square(50px);
+            
+            img {
+              @include fluid-img();
+            }
+          }
+        
+        
+        #hamburger {
+            display: none;
+        }
+        
+        h1 {
+            font-family: $theme-title-font;
+            color: $heading-color;
+        }
+    
+        .header-container{
+            @include flex(row, center, center );
+        }
+    
+        ul {
+            display: flex;
+        }
+    
+    
+        a {
+            text-decoration: none;
+            flex-direction: row-reverse;
+        }
+    
+        nav > ul{
+            @include flex(row center, flex-end);
+            gap: 1rem;
+            list-style: none;
+            text-decoration: none;
+        }
+    
     }
-
-
-    a {
-        text-decoration: none;
-        flex-direction: row-reverse
-    }
-
-    nav > ul{
-        @include flex(row center, flex-end);
-        gap: 1rem;
-        list-style: none;
-        text-decoration: none;
-        margin: 0px 25px 0px 0px;
-    }
-
 }
+
+
+
+
 
 
